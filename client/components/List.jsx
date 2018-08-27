@@ -31,6 +31,7 @@ class List extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const { todo, todos, listName } = this.state;
     axios
       .post('/api/todoList', { todo, listName: this.state.listName })
       .then(this.fetchTodos())
