@@ -12,6 +12,7 @@ class List extends Component {
     };
     this.fetchTodos = this.fetchTodos.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
   fetchTodos() {
@@ -40,7 +41,7 @@ class List extends Component {
 
   deleteTodo(todo) {
     axios
-      .delete('/api/todoList', { params: { listName: this.state.listName } })
+      .delete('/api/todoList', { params: { todo } })
       .then(this.fetchTodos())
       .catch(err => console.log(err));
   }
