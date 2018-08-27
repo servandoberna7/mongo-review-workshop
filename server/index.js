@@ -6,6 +6,8 @@ const router = require('./routes.js');
 
 const app = express();
 
+const db = require('../database/index.js');
+
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 
